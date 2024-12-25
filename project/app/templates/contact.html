@@ -170,10 +170,10 @@
     </div>
 </div>
 
+{% if contactdata %}
 <script>
     // Show the modal if the contactdata is present
-    {% if contactdata %}
-        var myModal = new bootstrap.Modal(document.getElementById('contactModal'));
-        myModal.show();
-    {% endif %}
+    var myModal = new bootstrap.Modal(document.getElementById('contactModal'));
+    myModal.show();
 </script>
+{% endif %}

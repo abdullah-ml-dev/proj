@@ -16,7 +16,7 @@ def contact(request):
         #     "email": email,
         #     "message": message,
         # }
-        contactdata = f"\tName: {name} \n \t Email: {email} \n \tMessage: {message}"
+        contactdata = f"\tName: {name} \n \tEmail: {email} \n \tMessage: {message}"
 
         
         return render(request, 'contact.html', {'contactdata': contactdata})
