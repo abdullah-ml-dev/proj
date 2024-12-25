@@ -65,7 +65,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <img src="https://via.placeholder.com/30" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="User  Icon">
+                                <img src="https://via.placeholder.com/30" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="User Icon">
                             </a>
                         </li>
                     </ul>
@@ -91,15 +91,15 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                        <textarea class="form-control" id="message" rows="5" name="message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>

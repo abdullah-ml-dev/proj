@@ -1,10 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Contact
 
 # Create your views here.
 def index(request):
-    print("Hello to the index page")
-    welcome = "Welcome to the index page"
-    return render(request, "index.html",{ "greetings": welcome})
+    return render(request, "index.html")
 def contact(request):
-    print("Hello to the contact page")
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        message = request.POST["message"]
+        contact = Contact(name=name, email=email, message=message)
+        contact.save()
+        return redirect("contact")
     return render(request, "contact.html")
