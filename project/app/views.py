@@ -9,15 +9,16 @@ def contact(request):
         name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message")
-        contact = Contact(name=name, email=email, message=message)
+        location = request.POST.get("location")
+        contact = Contact(name=name, email=email, message=message ,location=location)
         contact.save()
         # contactdata = {
         #     "name": name,
         #     "email": email,
         #     "message": message,
         # }
-        contactdata = f"\tName: {name} \n \tEmail: {email} \n \tMessage: {message}"
+        # contactdata = f"\tName: {name} \n \tEmail: {email} \n \tMessage: {message}"
 
         
-        return render(request, 'contact.html', {'contactdata': contactdata})
+        return redirect('contact') #, {'contactdata': contactdata}
     return render(request, "contact.html")
