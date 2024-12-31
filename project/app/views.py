@@ -10,15 +10,15 @@ def contact(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
         location = request.POST.get("location")
-        contact = Contact(name=name, email=email, message=message ,location=location)
-        contact.save()
-        # contactdata = {
-        #     "name": name,
-        #     "email": email,
-        #     "message": message,
-        # }
-        # contactdata = f"\tName: {name} \n \tEmail: {email} \n \tMessage: {message}"
-
+        priority = request.POST.get("priority")
         
-        return redirect('contact') #, {'contactdata': contactdata}
+        contact = Contact(
+            name=name, 
+            email=email, 
+            message=message,
+            location=location,
+            priority=priority
+        )
+        contact.save()
+        return redirect('contact')
     return render(request, "contact.html")
